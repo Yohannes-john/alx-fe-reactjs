@@ -1,3 +1,4 @@
+function UserProfile() {
 const UserProfile = (props) => {
    return (
      <div>
@@ -7,3 +8,4 @@ const UserProfile = (props) => {
      </div>
    );
  };
+}
