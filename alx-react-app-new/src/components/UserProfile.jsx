@@ -6,8 +6,8 @@
   backgroundColor: '#fafafa' 
 }}>
   <h2 style={{ 
-    color: '#333', 
-    fontSize: '1.5rem', 
+    color: 'blue', 
+    fontSize: 2.5rem', 
     marginBottom: '10px' 
   }}>
     {props.name}
