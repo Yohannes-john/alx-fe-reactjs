@@ -12,7 +12,7 @@ function MainContent() {
     }}>
       {/* Content goes here */}
       <h1>Main Content</h1>
-      <p>This is the main content area.</p>
+      <p>I Love to Visit New York,Paris, and Tokyo.</p>
     </div>
   );
 }
