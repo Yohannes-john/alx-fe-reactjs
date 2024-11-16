@@ -4,7 +4,7 @@ import React from 'react';
 function MainContent() {
   return (
     <div style={{
-      backgroundColor: '#f2f2f2',
+      backgroundColor: 'blue',
       padding: '20px',
       margin: '20px',
       borderRadius: '10px',
