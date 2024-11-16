@@ -1,21 +1,4 @@
-Gemini
 
-
-See the latest updates to the Gemini Apps Privacy HubOpens in a new window
-
-Conversation with Gemini
-
-UserContext.js.
-
-Initialize a Context using React.createContext() and export it
-
-
-Show drafts
-
-
-Here's a basic example of how to initialize a Context in React using React.createContext() and export it in a UserContext.js file:
-
-JavaScript
 // UserContext.js
 import React, { createContext, useState, useEffect } from 'react';
 
