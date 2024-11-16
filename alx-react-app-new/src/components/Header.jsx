@@ -1,3 +1,3 @@
-<header style="background-color: #333; color: #fff; text-align: center;">
+<header style="backgroundColor: #333; color: #fff; textAlign: center;">
   <h1>My Favorite Cities</h1>
 </header>
