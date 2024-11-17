@@ -30,3 +30,10 @@ const UserProvider = ({ children }) => {
 };
 
 export { UserContext, UserProvider };
+
+// UserContext.js
+import React, { createContext } from 'react';
+
+const UserContext = createContext(null);
+
+export default UserContext;
