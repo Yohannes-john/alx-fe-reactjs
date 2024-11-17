@@ -17,3 +17,13 @@ function UserInfo({ userData }) {
 }
 
 export default UserInfo;
+
+UserInfo.jsx:
+
+import UserDetails from './UserDetails';
+
+function UserInfo({ userData }) {
+  return <UserDetails userData={userData} />;
+}
+
+export default UserInfo;
