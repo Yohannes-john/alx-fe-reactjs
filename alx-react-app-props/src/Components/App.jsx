@@ -1,5 +1,4 @@
 
-// App.jsx
 import React, { useState, useEffect } from 'react';
 import { UserContext, UserProvider } from './UserContext';
 import ProfilePage from './ProfilePage';
