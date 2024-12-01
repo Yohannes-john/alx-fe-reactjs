@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {useFormik} from "formik";
 
 function RegistrationForm() {
     const [userData, setUserData] = useState({
@@ -16,6 +17,7 @@ function RegistrationForm() {
 
     const handleSubmit   
  = (event) => {
+      const formik = useFormik({});
         event.preventDefault();
         console.log(userData);
         setUserData({
