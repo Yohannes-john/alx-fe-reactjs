@@ -29,6 +29,12 @@ function UserProfile() {
       <div className="bg-gray-100 p-4 md:p-8 sm:p-4 max-w-xs md:max-w-sm mx-auto my-20 rounded-lg shadow-lg">
       {/* ... other profile details ... */}
     </div>
+      <div className="bg-gray-100 p-4 md:p-8 sm:p-4 max-w-xs md:max-w-sm mx-auto my-20 rounded-lg shadow-lg">
+      <h1 className="text-lg md:text-xl font-bold mb-4">User Profile</h1>
+      <p className="text-sm text-gray-600">This is a user profile description. It provides details about the user, such as their name, bio, and interests.</p>
+      {/* ... other profile details ... */}
+    </div>
+      
   );
 }
 
