@@ -3,9 +3,9 @@ import {useFormik} from "formik";
 
 function RegistrationForm() {
     const [userData, setUserData] = useState({
-        name: '',
-        email: '',
-        password: ''
+        name: 'jo',
+        email: 'jo@gmaop.com',
+        password: '1223344456'
     });
 
     const handleChange = (event) => {
@@ -21,10 +21,10 @@ function RegistrationForm() {
         event.preventDefault();
         console.log(userData);
         setUserData({
-            name: '',
-            email: '',
-            password:   
- ''
+            name: 'gh',
+            email: 'hk@gmail.com',
+            password: '233tt55yg'  
+ 
         });
     };
 
