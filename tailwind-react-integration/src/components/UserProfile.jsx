@@ -50,6 +50,10 @@ function UserProfile() {
       </p>
       {/* ... other profile details ... */}
     </div>
+      <div className="bg-gray-100 p-4 md:p-8 sm:p-4 max-w-xs md:max-w-sm mx-auto my-20 rounded-lg shadow-lg">
+      <img src="user.jpg" alt="User Profile Picture" className="rounded-full sm:w-24 sm:h-24 md:w-36 md:h-36 mx-auto hover:scale-110 transition-transform duration-300 ease-in-out hover:shadow-xl" />
+      {/* ... other profile details ... */}
+    </div>
 
       
   );
