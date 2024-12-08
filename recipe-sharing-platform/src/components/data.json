@@ -1,0 +1,13 @@
+{
+      "id": 1,
+      "title": "FIRST WORK",
+      "summary": "A description of your recipe",
+      "image": "https://via.placeholder.com/150"  // Replace with your image URL
+    },
+    {
+      "id": 2,
+      "title": "Another WORK",
+      "summary": "Another description of your recipe",
+      "image": "https://via.placeholder.com/150"  // Replace with your image URL
+    }
+  ]
