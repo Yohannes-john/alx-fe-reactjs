@@ -34,7 +34,15 @@ function Search({ onSearch }) {
       fetchUserData();
     }
   }, [username]);
-
+{githubData && githubData.items.map((user) => (
+  <div key={user.id} className="user-card">
+    <img src={user.avatar_url} alt={user.login} />
+    <h2>{user.login}</h2>
+    <p>{user.location}</p>
+    <p>Public Repositories: {user.public_repos}</p>
+    <a href={user.html_url} target="_blank" rel="noopener noreferrer">View Profile</a>
+  </div>
+))}
   return (
     <div>
       <form onSubmit={handleSubmit}>
