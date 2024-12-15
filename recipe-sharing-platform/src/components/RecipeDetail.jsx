@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import data from './data.json'; // Assuming data.json is in the same directory
+import data from './data.json';
 
 function RecipeDetail() {
   const { id } = useParams();
@@ -19,7 +19,7 @@ function RecipeDetail() {
   return (
     <div className="container mx-auto px-4">
       {recipe ? (
-        <div>
+        <div className="bg-white shadow-md rounded-lg p-6">
           <h1 className="text-3xl font-bold mb-4">{recipe.title}</h1>
           <img src={recipe.image} alt={recipe.title} className="w-full h-96 object-cover mb-4 rounded-lg" />
           <p className="text-lg text-gray-700">{recipe.description}</p>
