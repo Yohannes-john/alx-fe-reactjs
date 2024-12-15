@@ -1,23 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import data from './data.json'; // Assuming data.json is in the same directory
 
 function RecipeDetail() {
   const { id } = useParams();
   const [recipe, setRecipe] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchRecipe = async () => {
-      try {
-        const response = await fetch(`https://api.example.com/recipes/${id}`);
-        const data = await response.json();
-        setRecipe(data);
-      } catch (error) {
-        setError('Error fetching recipe');
-      } finally {
-        setIsLoading(false);
-      }
+    const fetchRecipe = () => {
+      const foundRecipe = data.find(recipe => recipe.id === parseInt(id));
+      setRecipe(foundRecipe);
     };
 
     fetchRecipe();
@@ -25,11 +17,7 @@ function RecipeDetail() {
 
   return (
     <div className="container mx-auto px-4">
-      {isLoading ? (
-        <p>Loading...</p>
-      ) : error ? (
-        <p>{error}</p>
-      ) : (
+      {recipe ? (
         <div>
           <h1 className="text-3xl font-bold mb-4">{recipe.title}</h1>
           <img src={recipe.image} alt={recipe.title} className="w-full h-64 object-cover mb-4" />
@@ -47,6 +35,8 @@ function RecipeDetail() {
             ))}
           </ol>
         </div>
+      ) : (
+        <p>Recipe not found.</p>
       )}
     </div>
   );
