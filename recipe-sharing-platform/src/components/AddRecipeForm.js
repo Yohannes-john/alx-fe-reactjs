@@ -1,72 +1,96 @@
 import React, { useState } from 'react';
 
-function AddRecipeForm() {
-  const [formData, setFormData] = useState({
-    title: '',
-    ingredients: '',
-    steps: '',
-  });
+function AddRecipeForm({ onAddRecipe }) {
+  const [title, setTitle] = useState('');
+  const [image, setImage] = useState('');
+  const [description, setDescription] = useState('');
+  const [ingredients, setIngredients] = useState([]);
+  const [instructions, setInstructions] = useState([]);
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleIngredientChange = (e) => {
+    setIngredients([...ingredients, e.target.value]);
+  };
+
+  const handleInstructionChange = (e) => {
+    setInstructions([...instructions, e.target.value]);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here, e.g., send data to a server
-    console.log(formData);
-    // Clear form after submission
-    setFormData({ title: '', ingredients: '', steps: '' });
+    const newRecipe = {
+      title,
+      image,
+      description,
+      ingredients,
+      instructions
+    };
+    onAddRecipe(newRecipe);
+    // Clear the form fields
+    setTitle('');
+    setImage('');
+    setDescription('');
+    setIngredients([]);
+    setInstructions([]);
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md mx-auto">
-      <div className="mb-4">
-        <label htmlFor="title" className="block text-sm font-medium text-gray-700">
-          Title
-        </label>
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="title">Title:</label>
         <input
           type="text"
           id="title"
-          name="title"
-          value={formData.title}
-          onChange={handleChange}
-          className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          required
         />
       </div>
-
-      <div className="mb-4">
-        <label htmlFor="ingredients" className="block text-sm font-medium text-gray-700">
-          Ingredients
-        </label>
-        <textarea
-          id="ingredients"
-          name="ingredients"
-          value={formData.ingredients}
-          onChange={handleChange}
-          className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-        ></textarea>
+      <div>
+        <label htmlFor="image">Image URL:</label>
+        <input
+          type="text"
+          id="image"
+          value={image}
+          onChange={(e) => setImage(e.target.value)}
+          required
+        />
       </div>
-
-      <div className="mb-4">
-        <label htmlFor="steps" className="block text-sm font-medium text-gray-700">
-          Steps
-        </label>
+      <div>
+        <label htmlFor="description">Description:</label>
         <textarea
-          id="steps"
-          name="steps"
-          value={formData.steps}
-          onChange={handleChange}
-          className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-        ></textarea>
+          id="description"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          required
+        />
       </div>
-
-      <button
-        type="submit"
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-      >
-        Add Recipe
-      </button>
+      <div>
+        <label htmlFor="ingredients">Ingredients:</label>
+        <ul>
+          {ingredients.map((ingredient, index) => (
+            <li key={index}>{ingredient}</li>
+          ))}
+        </ul>
+        <input
+          type="text"
+          placeholder="Add an ingredient"
+          onChange={handleIngredientChange}
+        />
+      </div>
+      <div>
+        <label htmlFor="instructions">Instructions:</label>
+        <ol>
+          {instructions.map((instruction, index) => (
+            <li key={index}>{instruction}</li>
+          ))}
+        </ol>
+        <input
+          type="text"
+          placeholder="Add an instruction"
+          onChange={handleInstructionChange}
+        />
+      </div>
+      <button type="submit">Add Recipe</button>
     </form>
   );
 }
