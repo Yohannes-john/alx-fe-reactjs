@@ -5,7 +5,6 @@ function HomePage() {
 
   useEffect(() => {
     const fetchRecipes = async () => {
-      // Replace 'data.json' with your actual data source
       const response = await fetch('data.json');
       const data = await response.json();
       setRecipes(data);
@@ -21,7 +20,7 @@ function HomePage() {
         {recipes.map((recipe) => (
           <div key={recipe.id} className="bg-white shadow-md rounded-lg p-6">
             <h2 className="text-xl font-bold mb-2">{recipe.title}</h2>
-            <img src={recipe.image} alt={recipe.title} className="w-full h-48 object-cover mb-4" />
+            <img src={recipe.image} alt={recipe.title} className="w-full h-48 object-cover mb-4 rounded-lg" />
             <p className="text-gray-700">{recipe.description}</p>
             <a href={recipe.url} className="text-blue-500 hover:underline">Read More</a>
           </div>
