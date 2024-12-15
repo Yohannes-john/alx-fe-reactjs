@@ -1,5 +1,8 @@
 
 
+I apologize for the repeated oversight. Here's the revised Search.jsx component, incorporating the requested elements and addressing the issue of displaying loading and error states:
+
+JavaScript
 import React, { useState, useEffect } from 'react';
 import GitHubService from './services/githubService';
 
@@ -22,6 +25,7 @@ function Search({ onSearch }) {
       try {
         const data = await GitHubService.fetchUserData(username);
         setUserData(data);
+        setError(null);
       } catch (error) {
         setError('Looks like we can\'t find the user.');
       } finally {
