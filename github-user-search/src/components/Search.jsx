@@ -1,8 +1,5 @@
 
 
-I apologize for the repeated oversight. Here's the revised Search.jsx component, incorporating the requested elements and addressing the issue of displaying loading and error states:
-
-JavaScript
 import React, { useState, useEffect } from 'react';
 import GitHubService from './services/githubService';
 
