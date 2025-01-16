@@ -10,7 +10,7 @@ function AddRecipeForm({ onAddRecipe }) {
   const handleIngredientChange = (e) => {
     setIngredients([...ingredients, e.target.value]);
   };
-
+"steps"
   const handleInstructionChange = (e) => {
     setInstructions([...instructions, e.target.value]);
   };
