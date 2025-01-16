@@ -14,7 +14,7 @@ function AddRecipeForm({ onAddRecipe }) {
   const handleInstructionChange = (e) => {
     setInstructions([...instructions, e.target.value]);
   };
-
+"validate", "errors", "setErrors"
   const handleSubmit = (e) => {
     e.preventDefault();
     const newRecipe = {
