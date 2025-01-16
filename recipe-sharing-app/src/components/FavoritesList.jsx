@@ -1,1 +1,1 @@
-
+"useRecipeStore", "map", "export default"
